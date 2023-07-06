@@ -15,9 +15,9 @@ const App = () => {
 
       <button
         className="btn"
-        onClick={user?.length == null ? refetchUsers : clearUsers}
+        onClick={user?.length > 0 ? clearUsers : refetchUsers}
       >
-        {user?.length == null ? "Refetch users" : "Clear"}
+        {user?.length > 0 ? "Clear" : "Refetch users"}
       </button>
     </div>
   );

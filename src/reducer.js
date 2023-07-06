@@ -1,12 +1,12 @@
 // import { arrayedData } from "./Context";
 import { CLEAR_USERS, REFETCH_USERS } from "./actions";
 
-const reducer = (action, state) => {
+const reducer = (state, action) => {
   if (action.type == CLEAR_USERS) {
-    return { ...state, user: new Map() };
+    return { ...state, user: [] };
   }
   if (action.type == REFETCH_USERS) {
-    return { ...state, user: arrayedData };
+    return { ...state, user: action.payload };
   }
 
   return;
